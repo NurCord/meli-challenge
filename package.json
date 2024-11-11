@@ -1,0 +1,29 @@
+{
+  "name": "meli-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/app.js",
+    "build": "tsc",
+    "dev": "ts-node src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NurCord/meli-challenge.git"
+  },
+  "author": "Nuria Cordoba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NurCord/meli-challenge/issues"
+  },
+  "homepage": "https://github.com/NurCord/meli-challenge#readme",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.9.0",
+    "express": "^4.21.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
