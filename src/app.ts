@@ -6,7 +6,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use('/ping', (req, res) => { res.send('pong') });
+app.get('/', (_req, res) => {
+  res.send('Bienvenido a la API de Mutant Detection. Visita /api para acceder a los endpoints.');
+});
 app.use("/api", router);
 
 
