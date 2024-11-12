@@ -6,8 +6,14 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-
+app.use('ping', (req, res) => { res.send('pong') });
 app.use("/api", router);
+
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
 
 const initDb = async () => {
   try {
@@ -22,6 +28,3 @@ const initDb = async () => {
 
 initDb();
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
