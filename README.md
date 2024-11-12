@@ -16,8 +16,8 @@ Este proyecto es una API para detectar si una secuencia de ADN pertenece a un mu
 
 1. Clona el repositorio:
    ```sh
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/NurCord/meli-challenge.git
+   cd meli-challenge
    ```
 1. Instala las dependencias:
    ```sh
@@ -29,7 +29,7 @@ Este proyecto es una API para detectar si una secuencia de ADN pertenece a un mu
 1. Compila el proyecto:
 
    ```sh
-   npm build
+   npm run build
    ```
 
 2. Inicia el servidor:
@@ -42,7 +42,7 @@ Este proyecto es una API para detectar si una secuencia de ADN pertenece a un mu
 
 ## Endpoints
 
-## POST /mutant
+### POST /api/mutant
 
 Verifica si una secuencia de ADN es mutante.
 
@@ -61,44 +61,64 @@ Verifica si una secuencia de ADN es mutante.
   - `403 Forbidden`: Si la secuencia de ADN no es mutante.
   - `400 Bad Request`: Si la secuencia de ADN es inválida.
 
-## GET /stats
+### GET /api/stats
 
 Obtiene estadísticas sobre las verificaciones de ADN realizadas.
 
 - URL: /stats
 - Método: GET
 - Respuestas:
+
   - `200 OK`: Devuelve las estadísticas en formato JSON.
+
+    ```sh
+      {
+      "count_mutant_dna": 40,
+      "count_human_dna": 100,
+      "ratio": 0.4
+      }
+    ```
 
 ## Estructura del Proyecto
 
 ```sh
    ├── src
    │   ├── controllers
+   │   │   ├── index.ts
    │   │   ├── mutant.controller.ts
-   │   │   ├── stats.controller.ts
+   │   │   └── stats.controller.ts
    │   ├── models
-   │   │   ├── DnaSequence.ts
+   │   │   └── DnaSequence.ts
    │   ├── routes
+   │   │   ├── index.ts
    │   │   ├── mutant.routes.ts
-   │   │   ├── stats.routes.ts
+   │   │   └── stats.routes.ts
    │   ├── services
+   │   │   ├── index.ts
    │   │   ├── mutant.services.ts
-   │   │   ├── stats.services.ts
-   │   ├── schemas
-   │   │   ├── dna.schema.ts
+   │   │   └── stats.services.ts
+   │   ├── types
+   │   │   └── types.ts
+   │   ├── utils
+   │   │   ├── constants.ts
+   │   │   └── mutant.ts
    │   ├── app.ts
-   │   ├── server.ts
+   │   ├── db.ts
+   │   └──schemas.ts
    ├── tests
-   │   ├── controllers
-   │   │   ├── mutant.controllers.test.ts
-   │   ├── routes
-   │   │   ├── mutant.routes.test.ts
-   │   ├── services
-   │   │   ├── mutant.services.test.ts
+   │   └── src
+   │       ├── controllers
+   │       │   ├── mutant.controllers.test.ts
+   │       │   └── stats.controllers.test.ts
+   │       ├── services
+   │       │   ├── mutant.services.test.ts
+   │       │   └── stats.services.test.ts
+   │       └── utils
+   │           └── mutant.test.ts
    ├── .env
    ├── package.json
-   └── README.md
+   ├── README.md
+   └── tsconfig.json
 ```
 
 ## Pruebas
@@ -118,7 +138,7 @@ npm test path/to/your/test/file.test.ts
 Por ejemplo:
 
 ```sh
-npx jest tests/src/controllers/mutant.controllers.test.ts
+npm test tests/src/controllers/mutant.controllers.test.ts
 ```
 
 ## Variables de Entorno
