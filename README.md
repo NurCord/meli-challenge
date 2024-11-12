@@ -73,9 +73,9 @@ Obtiene estadísticas sobre las verificaciones de ADN realizadas.
 
     ```sh
       {
-      "count_mutant_dna": 40,
-      "count_human_dna": 100,
-      "ratio": 0.4
+         "count_mutant_dna": 40,
+         "count_human_dna": 100,
+         "ratio": 0.4
       }
     ```
 
