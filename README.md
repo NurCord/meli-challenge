@@ -46,7 +46,7 @@ Este proyecto es una API para detectar si una secuencia de ADN pertenece a un mu
 
 Verifica si una secuencia de ADN es mutante.
 
-- URL: /mutant
+- URL: /api/mutant
 - Método: POST
 - Body:
 
@@ -65,7 +65,7 @@ Verifica si una secuencia de ADN es mutante.
 
 Obtiene estadísticas sobre las verificaciones de ADN realizadas.
 
-- URL: /stats
+- URL: /api/stats
 - Método: GET
 - Respuestas:
 
