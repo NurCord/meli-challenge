@@ -2,6 +2,6 @@ import express from "express";
 import { mutant } from "../controllers";
 const mutantRoutes = express.Router();
 
-mutantRoutes.post("/mutant", mutant);
+mutantRoutes.post("/", mutant);
 
 export { mutantRoutes };
