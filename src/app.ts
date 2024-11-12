@@ -1,17 +1,12 @@
-import express, { Request, Response } from 'express';
-import { mutantRoutes } from './routes/mutant';
-import { statsRoutes } from './routes/stats';
+import express from "express";
+import router from "./routes";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use("/api", mutantRoutes);
-app.use("/api", statsRoutes);
-app.get('/ping',(req: Request,res:Response) => {
-  res.send('pong')
-})
+app.use(router);
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
